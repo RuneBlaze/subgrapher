@@ -4,6 +4,7 @@ from itertools import combinations
 import numpy as np
 from extract_subgraph import create_fake_data
 import torch
+from tqdm import tqdm
 
 def sample_combinations(l, k, samples = 5000):
     # sample "samples" # of  k combinations from l
@@ -34,7 +35,7 @@ if __name__ == '__main__':
     quintets = sample_combinations(labels, 5)
     quartets = sample_combinations(labels, 4)
     datasets = []
-    for i in range(1000):
+    for i in tqdm(range(1000)):
         for q in quintets:
             datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], q))
     # for i in range(1000):
