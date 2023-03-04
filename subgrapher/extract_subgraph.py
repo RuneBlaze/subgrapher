@@ -5,7 +5,7 @@ import numpy as np
 from dataclasses import dataclass
 from comparer import topology_agree
 import torch
-NORMALIZER = 0.3333
+NORMALIZER = 0
 def ts2nx(t : ts.Tree):
     G = nx.Graph()
     node2id = {}
