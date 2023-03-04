@@ -6,7 +6,7 @@ from extract_subgraph import create_fake_data
 import torch
 from tqdm import tqdm
 
-def sample_combinations(l, k, samples = 1500):
+def sample_combinations(l, k, samples = 1000):
     # sample "samples" # of  k combinations from l
     res = set()
     for _ in range(samples):
