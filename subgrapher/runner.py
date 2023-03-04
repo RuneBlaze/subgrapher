@@ -6,7 +6,7 @@ from extract_subgraph import create_fake_data
 import torch
 from tqdm import tqdm
 
-def sample_combinations(l, k, samples = 1000):
+def sample_combinations(l, k, samples = 500):
     # sample "samples" # of  k combinations from l
     res = set()
     for _ in range(samples):
@@ -37,6 +37,11 @@ if __name__ == '__main__':
     datasets = []
     for i in tqdm(range(1000)):
         for q in quintets:
+            try:
+                datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], q))
+            except ValueError:
+                pass
+        for q in quartets:
             try:
                 datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], q))
             except ValueError:
