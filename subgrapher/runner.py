@@ -35,7 +35,7 @@ if __name__ == '__main__':
     quintets = sample_combinations(labels, 5)
     quartets = sample_combinations(labels, 4)
     datasets = []
-    for i in tqdm(range(1000)):
+    for i in tqdm(range(10)):
         for q in quintets:
             try:
                 datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], q))
