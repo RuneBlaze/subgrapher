@@ -29,7 +29,7 @@ if __name__ == '__main__':
     # read trees in the form of gtrees_400.tre.l325.nni.abayes.cleaned
     true_gene_trees = read_tree_list(args.directory + '/truegenetrees')
     est_gene_trees = []
-    for i in range(1000):
+    for i in tqdm(range(1000)):
         est_gene_trees.append(ts.read_tree_newick(args.directory + f'/gtrees_400.tre.l{i}.nni.abayes.cleaned'))
     labels = [n.label for n in true_gene_trees[0].traverse_leaves()]
     quintets = sample_combinations(labels, 5)
