@@ -37,5 +37,8 @@ if __name__ == '__main__':
     datasets = []
     for i in tqdm(range(1000)):
         for q in quintets:
-            datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], q))
+            try:
+                datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], q))
+            except ValueError:
+                pass
     torch.save(datasets, args.directory + '/datasets.pt')
