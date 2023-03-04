@@ -41,13 +41,13 @@ def extract_graph(t : ts.Tree, taxa : List[str]):
     print(subtree.newick())
     G = ts2nx(subtree)
     # contract the nodes
-    while True:
-        nodes = [n for n in G.nodes() if G.degree(n) == 2]
-        if len(nodes) == 0:
-            break
-        for n in nodes:
-            if G.degree(n) == 2:
-                contract_node(G, n)
+    # while True:
+    #     nodes = [n for n in G.nodes() if G.degree(n) == 2]
+    #     if len(nodes) == 0:
+    #         break
+    #     for n in nodes:
+    #         if G.degree(n) == 2:
+    #             contract_node(G, n)
     for e in G.edges():
         oldsupport = np.exp(G[e[0]][e[1]]['support'])
         G[e[0]][e[1]]['support'] = 1 - oldsupport
