@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "subgrapher"
+version = "0.1.0"
+description = ""
+authors = ["runeblaze <runeblaze@excite.co.jp>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+treeswift = "^1.1.33"
+networkx = "^3.0"
+numpy = "^1.24.2"
+matplotlib = "^3.7.0"
+torch = "^1.13.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
