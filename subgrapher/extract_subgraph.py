@@ -38,7 +38,7 @@ def contract_node(g, u):
 
 def extract_graph(t : ts.Tree, taxa : List[str]):
     subtree = t.extract_tree_with(taxa, suppress_unifurcations=False)
-    print(subtree.newick())
+    # print(subtree.newick())
     G = ts2nx(subtree)
     # contract the nodes
     # while True:
@@ -73,5 +73,5 @@ def create_fake_data(est_tree, true_tree, q):
     G = extract_graph(est_tree, q)
     draft = nx2pyg(G)
     draft.y = torch.tensor([[1 if topology_agree(est_tree, true_tree, q) else 0]])
-    print(draft)
+    # print(draft)
     return draft
