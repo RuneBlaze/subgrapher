@@ -20,7 +20,7 @@ def bipartitions(t : ts.Tree):
 
 def topology_agree(g_star, g, t):
     subtree1 = g_star.extract_tree_with(t, suppress_unifurcations=True)
-    print(subtree1.newick())
+    # print(subtree1.newick())
     subtree2 = g.extract_tree_with(t, suppress_unifurcations=True)
-    print(subtree2.newick())
+    # print(subtree2.newick())
     return bipartitions(subtree1) == bipartitions(subtree2)

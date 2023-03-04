@@ -38,7 +38,7 @@ def contract_node(g, u):
 
 def extract_graph(t : ts.Tree, taxa : List[str]):
     subtree = t.extract_tree_with(taxa, suppress_unifurcations=False)
-    print(subtree.newick())
+    # print(subtree.newick())
     G = ts2nx(subtree)
     # contract the nodes
     while True:
