@@ -35,7 +35,8 @@ if __name__ == '__main__':
     quartets = sample_combinations(labels, 4)
     datasets = []
     for i in range(1000):
-        datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], quintets))
-    for i in range(1000):
-        datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], quartets))
+        for q in quintets:
+            datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], q))
+    # for i in range(1000):
+    #     datasets.append(create_fake_data(est_gene_trees[i], true_gene_trees[i], quartets))
     torch.save(datasets, args.directory + '/datasets.pt')
