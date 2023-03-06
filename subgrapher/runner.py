@@ -50,7 +50,7 @@ if __name__ == '__main__':
                 dp['order'] = torch.tensor(d.order)
                 dp['error_prob'] = torch.tensor(d.error_prob).float()
                 dp['edge_length'] = torch.tensor(d.edge_length).float()
-                dp['taxa'] = d['taxa']
+                dp['taxa'] = d.taxa
                 datasets.append(dp)
             except ValueError:
                 pass
