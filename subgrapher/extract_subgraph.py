@@ -16,7 +16,7 @@ def ts2nx(t : ts.Tree):
     for n in t.traverse_postorder():
         for c in n.children:
             if c.is_leaf():
-                error_prob = 0
+                error_prob = -np.inf
             else:
                 error_prob = 1 - max((float(c.label) - NORMALIZER), 0) / (1 - NORMALIZER)
                 error_prob = np.log(error_prob) if error_prob > 0 else -np.inf
@@ -38,16 +38,15 @@ def contract_node(g, u):
 
 def extract_graph(t : ts.Tree, taxa : List[str]):
     subtree = t.extract_tree_with(taxa, suppress_unifurcations=False)
-    # print(subtree.newick())
     G = ts2nx(subtree)
     # contract the nodes
-    # while True:
-    #     nodes = [n for n in G.nodes() if G.degree(n) == 2]
-    #     if len(nodes) == 0:
-    #         break
-    #     for n in nodes:
-    #         if G.degree(n) == 2:
-    #             contract_node(G, n)
+    while True:
+        nodes = [n for n in G.nodes() if G.degree(n) == 2]
+        if len(nodes) == 0:
+            break
+        for n in nodes:
+            if G.degree(n) == 2:
+                contract_node(G, n)
     for e in G.edges():
         oldsupport = np.exp(G[e[0]][e[1]]['support'])
         G[e[0]][e[1]]['support'] = 1 - oldsupport
@@ -73,5 +72,4 @@ def create_fake_data(est_tree, true_tree, q):
     G = extract_graph(est_tree, q)
     draft = nx2pyg(G)
     draft.y = torch.tensor([[1 if topology_agree(est_tree, true_tree, q) else 0]])
-    # print(draft)
     return draft
