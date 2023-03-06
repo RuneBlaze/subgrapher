@@ -1,7 +1,7 @@
 import treeswift as ts
 from dataclasses import dataclass
 from typing import Tuple, Optional
-NORMALIZER = 0
+NORMALIZER = 0.333
 import numpy as np
 from copy import copy
 from itertools import combinations
