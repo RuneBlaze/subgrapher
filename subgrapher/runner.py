@@ -54,10 +54,10 @@ if __name__ == '__main__':
                 datasets.append([
                     dp['predicted_label'],
                     dp['true_label'],
-                    dp['order'],
+                    # dp['order'],
                     dp['error_prob'],
                     dp['edge_length'],
-                    dp['taxa']
+                    # dp['taxa']
                 ])
             except ValueError:
                 pass
