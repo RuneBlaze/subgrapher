@@ -61,4 +61,4 @@ if __name__ == '__main__':
                 ])
             except ValueError:
                 pass
-    torch.save(datasets, args.directory + '/dataset_quartets_raw.pt')
+    torch.save(datasets, args.directory + '/dataset_quartets_bare.pt')
