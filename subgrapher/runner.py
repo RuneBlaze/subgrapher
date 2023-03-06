@@ -51,7 +51,14 @@ if __name__ == '__main__':
                 dp['error_prob'] = torch.tensor(d.error_prob).float()
                 dp['edge_length'] = torch.tensor(d.edge_length).float()
                 dp['taxa'] = d.taxa
-                datasets.append(dp)
+                datasets.append([
+                    dp['predicted_label'],
+                    dp['true_label'],
+                    dp['order'],
+                    dp['error_prob'],
+                    dp['edge_length'],
+                    dp['taxa']
+                ])
             except ValueError:
                 pass
-    torch.save(datasets, args.directory + '/dataset_quartets.pt')
+    torch.save(datasets, args.directory + '/dataset_quartets_raw.pt')
