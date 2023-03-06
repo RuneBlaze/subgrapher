@@ -54,4 +54,4 @@ if __name__ == '__main__':
                 datasets.append(dp)
             except ValueError:
                 pass
-    torch.save(datasets, args.directory + '/datasets.pt')
+    torch.save(datasets, args.directory + '/dataset_quartets.pt')
