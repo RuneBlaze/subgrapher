@@ -8,7 +8,7 @@ from dataclasses import asdict
 import torch
 from tqdm import tqdm
 
-def sample_combinations(l, k, samples = 50000):
+def sample_combinations(l, k, samples = 10000):
     # sample "samples" # of  k combinations from l
     res = set()
     for _ in range(samples):
