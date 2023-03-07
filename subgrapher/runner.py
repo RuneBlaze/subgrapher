@@ -54,11 +54,22 @@ if __name__ == '__main__':
                 datasets.append([
                     dp['predicted_label'],
                     dp['true_label'],
-                    # dp['order'],
                     dp['error_prob'],
                     dp['edge_length'],
-                    # dp['taxa']
                 ])
             except ValueError:
                 pass
-    torch.save(datasets, args.directory + '/dataset_quartets_bare.pt')
+    from collections import defaultdict
+    training = defaultdict(list)
+    for q in range(1000):
+        for g in range(1000):
+            training[q].append(datasets[g * 1000  + q])
+    collated = []
+    for q in range(1000):
+        to_collate = []
+        to_collate.append(torch.stack([training[q][i][0] for i in range(1000)]))
+        to_collate.append(torch.stack([training[q][i][1] for i in range(1000)]))
+        to_collate.append(torch.stack([training[q][i][2] for i in range(1000)]))
+        to_collate.append(torch.stack([training[q][i][3] for i in range(1000)]))
+        collated.append(to_collate)
+    torch.save(collated, args.directory + '/collated_bare.pt')
