@@ -78,7 +78,7 @@ if __name__ == '__main__':
     for q in tqdm(quintets):
         t1 = true_gene_trees.tally_single_quintet(q)
         t2 = est_gene_trees.tally_single_quintet(q)
-        if t1.sum() == 0 or t2.sum() == 0:
+        if sum(t1) == 0 or sum(t2) == 0:
             continue
         dist_true.append(np.asarray(t1) / t1.sum(), dtype=np.single)
         dist_est.append(np.asarray(t2) / t2.sum(), dtype=np.single)
