@@ -70,7 +70,7 @@ if __name__ == '__main__':
         for t in est_gene_trees:
             f.write(remove_root_prefix(t) + '\n')
     est_gene_trees = TreeSet(args.directory + '/est_gene_trees')
-    labels = [n.label for n in true_gene_trees[0].traverse_leaves()]
+    labels = [n.label for n in true_species_tree.traverse_leaves()]
     dist_true = []
     dist_est = []
     topology_rooted = []
