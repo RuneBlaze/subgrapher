@@ -82,7 +82,7 @@ if __name__ == '__main__':
             continue
         dist_true.append(np.asarray(t1, dtype=np.single) / sum(t1))
         dist_est.append(np.asarray(t2, dtype=np.single) / sum(t2))
-        topology_rooted.append(extract_clades(np.asarray(true_species_tree, dtype=np.single), q))
+        topology_rooted.append(extract_clades(true_species_tree, q))
         if len(dist_true) >= 50000:
             break
     dist_true = torch.tensor(dist_true).float()
