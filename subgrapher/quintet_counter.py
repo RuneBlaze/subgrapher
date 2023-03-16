@@ -80,8 +80,8 @@ if __name__ == '__main__':
         t2 = est_gene_trees.tally_single_quintet(q)
         if sum(t1) == 0 or sum(t2) == 0:
             continue
-        dist_true.append(np.asarray(t1) / t1.sum(), dtype=np.single)
-        dist_est.append(np.asarray(t2) / t2.sum(), dtype=np.single)
+        dist_true.append(np.asarray(t1) / sum(t1), dtype=np.single)
+        dist_est.append(np.asarray(t2) / sum(t2), dtype=np.single)
         topology_rooted.append(extract_clades(np.asarray(true_species_tree, dtype=np.single), q))
         if len(dist_true) >= 50000:
             break
