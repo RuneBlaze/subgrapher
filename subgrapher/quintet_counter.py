@@ -65,7 +65,7 @@ if __name__ == '__main__':
     true_species_tree = ts.read_tree_newick(args.directory + '/s_tree.trees')
     for i in range(1000):
         est_gene_trees.append(ts.read_tree_newick(args.directory + f'/gtrees_400.tre.l{i}.abayes.cleaned'))
-    with open(args.directory + '/est_gene_trees') as f:
+    with open(args.directory + '/est_gene_trees', 'w+') as f:
         # write out est_gene_trees
         for t in est_gene_trees:
             f.write(remove_root_prefix(t) + '\n')
