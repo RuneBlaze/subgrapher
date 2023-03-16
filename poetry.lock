@@ -355,6 +355,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "table-five"
+version = "0.0.2"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
@@ -442,7 +450,7 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "d4971dbd2e004c3096026d14f921786c159db1fecc82f14bcbc6b57b00b701e7"
+content-hash = "41b4cd76dd93d5b547d3681b60433ac71515a8e23b1ef7a8076070c051cca7f7"
 
 [metadata.files]
 attrs = [
@@ -812,6 +820,22 @@ six = [
 sortedcontainers = [
     {file = "sortedcontainers-2.4.0-py2.py3-none-any.whl", hash = "sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0"},
     {file = "sortedcontainers-2.4.0.tar.gz", hash = "sha256:25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"},
+]
+table-five = [
+    {file = "table_five-0.0.2-cp37-abi3-macosx_10_7_x86_64.whl", hash = "sha256:3b3e018cba0fe36d08ff9275017a0943c901187fd27a68592dd9c86789d71766"},
+    {file = "table_five-0.0.2-cp37-abi3-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:53b90ac5229a1c53607ae1f6f4463001a0bb60b71b401a6728af01803c06babb"},
+    {file = "table_five-0.0.2-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:afc6f726bccfb446ed87b3111f6bd3ea28eaca79176790c8ee9f79579e0dee50"},
+    {file = "table_five-0.0.2-cp37-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:79cc002d28497931ad30c7f14b27e38c9d7970bd2d6115e5487e9d27a3248df1"},
+    {file = "table_five-0.0.2-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:62e7ca2cc762c0dc84664599f5c075c910feda3592234e2aeedd6dd4ff4b8fdd"},
+    {file = "table_five-0.0.2-cp37-abi3-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:868543d14a0ed3472e24b7cd46233322dc782beca38b3a7a0e47e7f0e16fdc70"},
+    {file = "table_five-0.0.2-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:ccf3e0a9ff68261cf87fc01c5e23865cb0b4d749008817b4ac8b3b8cb88addb7"},
+    {file = "table_five-0.0.2-cp37-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:c21e9251f7ec045322f592cc196a1866c03d8db069e177431f0ccdc1598d3432"},
+    {file = "table_five-0.0.2-cp37-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:b5bb88fa333bc6105666c330630091e7e5551b30f232736e786cda7ac1c89f17"},
+    {file = "table_five-0.0.2-cp37-abi3-musllinux_1_2_i686.whl", hash = "sha256:4c0ea303619f2618ba83bc328f64ad1fe8dca2f532c1b1bfe068835a6561003c"},
+    {file = "table_five-0.0.2-cp37-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:5fafeb72d935e9cbfb3986edc1ce77a3fec5705eb544799d24bed9d010b6f293"},
+    {file = "table_five-0.0.2-cp37-abi3-win32.whl", hash = "sha256:de6810457247119b0d6d058bdb2c07aefb17263e448e7c4e4026512e846e313d"},
+    {file = "table_five-0.0.2-cp37-abi3-win_amd64.whl", hash = "sha256:4bf7add46528cbaff926f3b1b37cb37d9cb9bc94503ebbe43e864425b6d93463"},
+    {file = "table_five-0.0.2.tar.gz", hash = "sha256:9752b8b51db98306e56476735b627c4ea36f1a3e69895519217bcec0a68fb624"},
 ]
 tomli = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
