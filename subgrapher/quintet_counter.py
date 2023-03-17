@@ -58,6 +58,7 @@ def extract_clades(tree, taxa):
             if len(c.clade) < 5:
                 clades.append(c.clade)
     # convert to numeric_indices
+    assert len(clades) == 3
     return basis(
         [clades2idx[frozenset([taxa.index(l) for l in c])] for c in clades]
     )
